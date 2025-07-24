@@ -16,6 +16,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Force use artifact@v4 (prevents v3 fallback)
+        uses: actions/upload-artifact@v4
+        with:
+          name: noop
+          path: ./index.html
+
       - name: Validate HTML
         run: |
           sudo apt-get install -y tidy
