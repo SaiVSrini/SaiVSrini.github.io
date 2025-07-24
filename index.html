@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberAggie | Texas A&M Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --aggie-maroon: #500000;
+            --maroon-dark: #3a0000;
+            --maroon-light: #6a0c0c;
+            --aggie-white: #FFFFFF;
+            --off-white: #F9F9F9;
+            --aggie-gray: #E5E5E5;
+            --aggie-dark: #222222;
+            --accent-gold: #C99700;
+            --gold-light: #e8c166;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--aggie-dark);
+            background-color: var(--off-white);
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--maroon-dark);
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--aggie-white);
+            box-shadow: 0 2px 20px rgba(80, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--maroon-dark);
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--accent-gold);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--maroon-dark);
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, 
+                        rgba(80, 0, 0, 0.9) 0%, 
+                        rgba(106, 12, 12, 0.9) 100%),
+                        url('https://engineering.tamu.edu/cyber/_files/_images/_content-images/cyber-lab-3.jpg') no-repeat center center/cover;
+            padding: 8rem 0 4rem;
+            color: var(--aggie-white);
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero-text {
+            max-width: 700px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--aggie-white);
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .hero-contact {
+            margin-bottom: 2.5rem;
+        }
+        
+        .hero-contact p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .hero-contact i {
+            color: var(--accent-gold);
+            width: 1.2rem;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .social-links a {
+            color: var(--aggie-white);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(201, 151, 0, 0.2);
+        }
+        
+        .social-links a:hover {
+            color: var(--accent-gold);
+            background: rgba(201, 151, 0, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--maroon-dark);
+            margin-bottom: 3rem;
+            position: relative;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-gold);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* About Section */
+        #about {
+            background-color: var(--aggie-white);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .profile-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(80, 0, 0, 0.15);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border: 5px solid var(--aggie-white);
+            outline: 1px solid var(--aggie-gray);
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--maroon-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--aggie-dark);
+        }
+        
+        .education-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--aggie-gray);
+        }
+        
+        .education-item:last-child {
+            border-bottom: none;
+        }
+        
+        .education-item h4 {
+            font-size: 1.4rem;
+            color: var(--maroon-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--maroon-light);
+        }
+        
+        .education-details {
+            margin-top: 1rem;
+        }
+        
+        .education-details p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .education-details p::before {
+            content: '•';
+            color: var(--accent-gold);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Skills Section */
+        #skills {
+            background-color: var(--off-white);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: var(--aggie-white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(80, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--accent-gold);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(80, 0, 0, 0.15);
+        }
+        
+        .skill-category h3 {
+            color: var(--maroon-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .skill-category h3::before {
+            content: '';
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: var(--accent-gold);
+            border-radius: 3px;
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--maroon-dark);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: var(--aggie-gray);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--maroon-light), var(--maroon-dark));
+            border-radius: 4px;
+        }
+        
+        /* Projects Section */
+        #projects {
+            background-color: var(--aggie-white);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .project-card {
+            background: var(--off-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(80, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--aggie-gray);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(80, 0, 0, 0.15);
+            border-color: var(--accent-gold);
+        }
+        
+        .project-img {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.05);
+        }
+        
+        .project-info {
+            padding: 2rem;
+        }
+        
+        .project-info h3 {
+            font-size: 1.5rem;
+            color: var(--maroon-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .project-info p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: var(--aggie-dark);
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .project-links a {
+            color: var(--maroon-dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .project-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .project-links i {
+            font-size: 1.1rem;
+        }
+        
+        /* Resume Section */
+        #resume {
+            background: linear-gradient(135deg, 
+                        rgba(80, 0, 0, 0.9) 0%, 
+                        rgba(106, 12, 12, 0.9) 100%),
+                        url('https://engineering.tamu.edu/cse/_files/_images/_background-images/kyle-field-aerial.jpg') no-repeat center center/cover;
+            color: var(--aggie-white);
+            text-align: center;
+        }
+        
+        #resume .section-title {
+            color: var(--aggie-white);
+        }
+        
+        #resume .section-title::after {
+            background: var(--accent-gold);
+        }
+        
+        .resume-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--accent-gold);
+            color: var(--maroon-dark);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            font-size: 1.1rem;
+            border: 2px solid var(--accent-gold);
+        }
+        
+        .resume-btn:hover {
+            background: transparent;
+            color: var(--accent-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Contact Section */
+        #contact {
+            background-color: var(--off-white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--maroon-dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: var(--aggie-dark);
+        }
+        
+        .contact-details {
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.8rem;
+            gap: 1.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.3rem;
+            color: var(--aggie-white);
+            width: 3rem;
+            height: 3rem;
+            background: var(--maroon-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: var(--maroon-dark);
+        }
+        
+        .contact-text p, 
+        .contact-text a {
+            color: var(--aggie-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--maroon-dark);
+        }
+        
+        .contact-form {
+            background: var(--aggie-white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(80, 0, 0, 0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--maroon-dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--aggie-gray);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--maroon-dark);
+            box-shadow: 0 0 0 2px rgba(80, 0, 0, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--maroon-dark);
+            color: var(--aggie-white);
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: var(--maroon-light);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--maroon-dark);
+            color: var(--aggie-white);
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .footer-links a {
+            color: var(--aggie-white);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            background: rgba(201, 151, 0, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .aggie-signature {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-gold);
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                text-align: center;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">Cyber<span>Aggie</span></div>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Sai Srinivas Veeranadham</h1>
+                <h2 class="hero-subtitle">Masters Of Engineering In Engineering with Specilization in Cybersecurity | Texas A&M University</h2>
+                
+                <div class="hero-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> College Station, TX</p>
+                    <p><i class="fas fa-phone"></i> +1 (979) 739-6840</p>
+                    <p><i class="fas fa-envelope"></i> sai_srinivas@tamu.edu</p>
+                    <p><i class="fas fa-link"></i> linkedin.com/in/sai-srinivas-veeranadham</p>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/SaiVSrini" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sai-srinivas-veeranadham/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="profile-img">
+                    <img src="https://engineering.tamu.edu/cse/_files/_images/_profile-images/graduate-student-computer-lab.jpg" alt="Sai Srinivas Veeranadham">
+                </div>
+                <div class="about-text">
+                    <h3>Cybersecurity Graduate Student</h3>
+                    <p>I am a dedicated graduate student specializing in Cybersecurity at Texas A&M University, combining rigorous academic training with hands-on experience in securing complex systems. My expertise spans security monitoring, vulnerability assessment, threat modeling ,incident response, and secure infrastructure development.</p>
+                    
+                    <div class="education-item">
+                        <h4>Texas A&M University</h4>
+                        <div class="education-meta">
+                            <span>Master of Engineering in Cybersecurity</span>
+                            <span>Aug 2024 - Dec 2025</span>
+                        </div>
+                        <div class="education-details">
+                            <p>GPA: 4.0/4.0</p>
+                            <p>Courses: Cybersecurity Risk, Cybersecurity Law & Policy, Software Reverse Engineering, Digital Forensics and Incident Response, Malware Analysis</p>
+                        </div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h4>Amrita School of Computing</h4>
+                        <div class="education-meta">
+                            <span>Bachelor of Technology, Computer Science</span>
+                            <span>Aug 2018 - Aug 2022</span>
+                        </div>
+                        <div class="education-details">
+                            <p>GPA: 3.2/4.0</p>
+                            <p>Courses: Cloud Computing, Network Security, Operating Systems, Algorithms, Database Management Systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Java</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Bash/Shell</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>DevOps & Security</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Kubernetes</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Terraform</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Burp Suite</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Systems & Tools</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Linux/Unix</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Wireshark</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Splunk</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://engineering.tamu.edu/cyber/_files/_images/_content-images/security-monitoring.jpg" alt="Malicious URL Detection">
+                    </div>
+                    <div class="project-info">
+                        <h3>Malicious URL Detection</h3>
+                        <p>Developed a machine learning model using lexical analysis to detect malicious URLs with 95% accuracy by analyzing over 1 million samples and implementing feature engineering techniques.</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-code"></i> View Code</a>
+                            <a href="#"><i class="fas fa-chart-line"></i> Analysis</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://engineering.tamu.edu/cse/_files/_images/_content-images/incident-response.jpg" alt="Incident Response Simulator">
+                    </div>
+                    <div class="project-info">
+                        <h3>Cyber Security Incident Response Simulator</h3>
+                        <p>Built a Splunk-driven platform integrating real-time threat feeds with historical logs to enable faster detection workflows and reduce mean time to respond (MTTR) through dynamic attack scenario testing.</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-laptop-code"></i> Demo</a>
+                            <a href="#"><i class="fas fa-file-alt"></i> Documentation</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://engineering.tamu.edu/cse/_files/_images/_content-images/secure-coding.jpg" alt="Secure CI/CD Pipeline">
+                    </div>
+                    <div class="project-info">
+                        <h3>Secure CI/CD Pipeline Implementation</h3>
+                        <p>Designed and implemented automated security scanning in CI/CD pipelines using Checkmarx, SonarQube, and Snyk, detecting and remediating 100+ high-risk issues pre-deployment across multiple environments.</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> Repository</a>
+                            <a href="#"><i class="fas fa-project-diagram"></i> Architecture</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Resume</h2>
+            <a href="path/to/your/resume.pdf" class="resume-btn" download>
+                <i class="fas fa-download"></i> Download Full Resume
+            </a>
+        </div>
+    </section>
+
+ <!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>I'm currently open to cybersecurity research collaborations, internship opportunities, or professional discussions about securing modern infrastructure.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <a href="mailto:sai_srinivas@tamu.edu">sai_srinivas@tamu.edu</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <a href="tel:+19797396840">+1 (979) 739-6840</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>College Station, TX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="cyber-contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Secure Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/SaiVSrini" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sai-srinivas-veeranadham/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form Submission
+        document.getElementById('cyber-contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will respond to your inquiry soon.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            if (anchor.getAttribute('href') !== '#') {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        });
+        
+        // Animate skill bars on scroll
+        const animateSkillBars = () => {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        };
+        
+        // Intersection Observer for animations
+        const skillsSection = document.querySelector('#skills');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+    </script>
+</body>
+</html>
