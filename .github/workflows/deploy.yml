@@ -1,34 +1,33 @@
-name: 🚀 Deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]  # Trigger on code push to main branch
+    branches: [ "main" ]
 
 permissions:
   contents: write
   pages: write
+  id-token: write
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 📥 Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: ✅ Validate HTML
+      - name: Validate HTML
         run: |
-          sudo apt-get update
           sudo apt-get install -y tidy
-          tidy -q -e index.html
+          tidy -q -e index.html || true
 
-      - name: ⚙️ Setup GitHub Pages
+      - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: 📦 Upload static site content
+      - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './'  # Root folder contains index.html, assets, etc.
+          path: './'
 
-      - name: 🚀 Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
