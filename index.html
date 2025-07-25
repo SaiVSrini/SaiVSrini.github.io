@@ -359,6 +359,106 @@
             background: linear-gradient(90deg, var(--maroon-light), var(--maroon-dark));
             border-radius: 4px;
         }
+
+        /* Work Experience Section */
+        #experience {
+            background-color: var(--aggie-white);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent-gold);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .experience-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .experience-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--aggie-white);
+            border: 4px solid var(--accent-gold);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+            text-align: right;
+        }
+        
+        .right {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .experience-content {
+            padding: 20px;
+            background-color: var(--off-white);
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(80, 0, 0, 0.08);
+        }
+        
+        .experience-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            object-fit: contain;
+        }
+        
+        .company-info {
+            flex: 1;
+        }
+        
+        .company-name {
+            font-weight: 700;
+            color: var(--maroon-dark);
+            margin-bottom: 5px;
+        }
+        
+        .role {
+            font-weight: 600;
+            color: var(--maroon-light);
+        }
+        
+        .tenure {
+            font-size: 0.9rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
         
         /* Projects Section */
         #projects {
@@ -722,6 +822,26 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+
+            /* Timeline adjustments */
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .experience-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .experience-item::after {
+                left: 19px;
+            }
+            
+            .left, .right {
+                left: 0;
+                text-align: left;
+            }
         }
         
         @media (max-width: 576px) {
@@ -789,6 +909,7 @@
             <nav class="nav-links">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#resume">Resume</a>
                 <a href="#contact">Contact</a>
@@ -961,6 +1082,70 @@
         </div>
     </section>
 
+    <!-- Work Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <!-- Current Position -->
+                <div class="experience-item left">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Texas_A%26M_University_logo.svg/1200px-Texas_A%26M_University_logo.svg.png" alt="Texas A&M University" class="company-logo">
+                            <div class="company-info">
+                                <div class="company-name">Texas A&M University</div>
+                                <div class="role">Student Technician | CYPRES Project</div>
+                                <div class="tenure">Feb 2025 - Present</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PwC Full-time -->
+                <div class="experience-item right">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PricewaterhouseCoopers_Logo.svg/1200px-PricewaterhouseCoopers_Logo.svg.png" alt="PwC" class="company-logo">
+                            <div class="company-info">
+                                <div class="company-name">PwC</div>
+                                <div class="role">Cyber Security Analyst | DevOps Engineer</div>
+                                <div class="tenure">Aug 2022 - Aug 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PwC Internship -->
+                <div class="experience-item left">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PricewaterhouseCoopers_Logo.svg/1200px-PricewaterhouseCoopers_Logo.svg.png" alt="PwC" class="company-logo">
+                            <div class="company-info">
+                                <div class="company-name">PwC</div>
+                                <div class="role">Associate | Intern</div>
+                                <div class="tenure">Jan 2022 - July 2022</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ISRO -->
+                <div class="experience-item right">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Indian_Space_Research_Organisation_Logo.svg/1200px-Indian_Space_Research_Organisation_Logo.svg.png" alt="ISRO" class="company-logo">
+                            <div class="company-info">
+                                <div class="company-name">Indian Space Research Organisation</div>
+                                <div class="role">Computer Science Student Intern</div>
+                                <div class="tenure">Jan 2019 - April 2019</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
@@ -1016,7 +1201,7 @@
         <div class="container">
             <h2 class="section-title">Professional Resume</h2>
             <a href="assets/resume/resume.pdf" class="resume-btn" download>
-                <i class="fas fa-download"></i> Download Full Resume
+                <i class="fas fa-download"></i> Download Resume
             </a>
         </div>
     </section>
