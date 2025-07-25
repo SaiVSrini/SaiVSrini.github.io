@@ -424,6 +424,12 @@
             background-color: var(--off-white);
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(80, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .experience-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(80, 0, 0, 0.15);
         }
         
         .experience-header {
@@ -447,6 +453,12 @@
             font-weight: 700;
             color: var(--maroon-dark);
             margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .experience-content:hover .company-name {
+            transform: translateY(-2px);
+            color: var(--maroon-light);
         }
         
         .role {
@@ -458,6 +470,15 @@
             font-size: 0.9rem;
             color: var(--accent-gold);
             font-weight: 600;
+        }
+        
+        .experience-description {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--aggie-gray);
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--aggie-dark);
         }
         
         /* Projects Section */
@@ -1091,12 +1112,15 @@
                 <div class="experience-item left">
                     <div class="experience-content">
                         <div class="experience-header">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Texas_A%26M_University_logo.svg/1200px-Texas_A%26M_University_logo.svg.png" alt="Texas A&M University" class="company-logo">
+                            <img src="https://d26fti783qamsb.cloudfront.net/wp-content/uploads/2024/05/19171651/Limited-Use-TAM-Maroon.png" alt="Texas A&M University" class="company-logo">
                             <div class="company-info">
                                 <div class="company-name">Texas A&M University</div>
                                 <div class="role">Student Technician | CYPRES Project</div>
                                 <div class="tenure">Feb 2025 - Present</div>
                             </div>
+                        </div>
+                        <div class="experience-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
                         </div>
                     </div>
                 </div>
@@ -1112,6 +1136,9 @@
                                 <div class="tenure">Aug 2022 - Aug 2024</div>
                             </div>
                         </div>
+                        <div class="experience-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -1126,6 +1153,9 @@
                                 <div class="tenure">Jan 2022 - July 2022</div>
                             </div>
                         </div>
+                        <div class="experience-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+                        </div>
                     </div>
                 </div>
                 
@@ -1139,6 +1169,9 @@
                                 <div class="role">Computer Science Student Intern</div>
                                 <div class="tenure">Jan 2019 - April 2019</div>
                             </div>
+                        </div>
+                        <div class="experience-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
                         </div>
                     </div>
                 </div>
@@ -1246,28 +1279,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form id="cyber-contact-form">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Secure Message</button>
-                    </form>
                 </div>
             </div>
         </div>
